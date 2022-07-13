@@ -1,0 +1,17 @@
+extends layout
+
+block content
+  h1(class="mt-3")= title
+  p This is the amounts of items, brands, and categories that this inventory is include
+  hr
+  if err
+    p Error getting the counts
+  
+  else 
+    h4 We are currently have:
+    br
+    br
+    ul(class="list-inline") 
+      li(class='list-inline-item index') #[strong Items:] #{data.item_count}
+      li(class='list-inline-item index') #[strong Brands:] #{data.brand_count} 
+      li(class='list-inline-item index') #[strong Categories:] #{data.category_count} 

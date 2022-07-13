@@ -1,0 +1,24 @@
+extends layout
+
+block content
+  h1 #{title}
+  if error
+    p This item does not exist
+  else
+    h3= item.name
+
+    p #[strong Description:]
+        p #{item.description}
+        if !item.description
+            p no additional information on this item
+    p #[strong Category:]
+        a(href=item.category.url) #{item.category.name}
+    p #[strong Brand:]
+        a(href=item.brand.url) #{item.brand.name}
+    p #[strong Price:] $#{item.price}
+    p #[strong Quantity:] #{item.stockQuantity}
+  hr
+  p
+    a(href=item.url + '/delete') Delete Item
+  p
+    a(href=item.url + '/update') Update Item

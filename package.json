@@ -1,0 +1,28 @@
+{
+  "name": "inventory",
+  "version": "0.0.0",
+  "private": true,
+  "scripts": {
+    "start": "node ./bin/www",
+    "devstart": "nodemon ./bin/www",
+    "serverstart": "DEBUG=inventory:* npm run devstart"
+  },
+  "dependencies": {
+    "async": "^3.2.4",
+    "body-parser": "^1.20.0",
+    "compression": "^1.7.4",
+    "cookie-parser": "~1.4.4",
+    "debug": "~2.6.9",
+    "express": "~4.16.1",
+    "express-validator": "^6.14.2",
+    "helmet": "^5.1.0",
+    "http-errors": "~1.6.3",
+    "mongoose": "^6.4.2",
+    "morgan": "~1.9.1",
+    "multer": "^1.4.5-lts.1",
+    "pug": "2.0.0-beta11"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.18"
+  }
+}

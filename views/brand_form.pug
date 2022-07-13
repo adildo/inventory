@@ -1,0 +1,18 @@
+extends layout
+
+block content
+  h1 #{title}
+
+  form(method='POST' action='')
+    div.form-group
+      label(for='name') Brand :
+      input#name.form-control(type='text', placeholder='Nike, Adidas' name='name' value=(undefined===brand ? '' : brand.name))
+    div.form-group
+      label(for='name') Description :
+      input#description.form-control(type='text', placeholder='We made it' name='description' value=(undefined===brand ? '' : brand.description))
+    button.btn.btn-primary(type='submit') Submit
+
+  if errors
+   ul
+    for error in errors
+     li!= error.msg

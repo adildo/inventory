@@ -1,0 +1,19 @@
+extends layout 
+
+block content
+    h1= title
+    hr
+    h2= brand.name
+    if brand_items.length
+        p #[strong The following items need to be deleted before deleting this brand]
+        ul(class="row") 
+            each brand in brand_items
+                li(class='col-4')
+                    a(href=brand.url) #{brand.name}
+    else
+        p Are you sure you want to delete this brand?
+        form(action="" method="POST")
+            div.form-group
+                input#brandid.form-control(type='hidden',name='brandid', required='true', value=brand._id )
+
+            button.btn.btn-primary(type='submit') Delete Brand

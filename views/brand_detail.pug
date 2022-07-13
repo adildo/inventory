@@ -1,0 +1,19 @@
+extends layout
+
+block content
+    h1= title.name
+    h3= title.description
+    hr
+    h4 Items
+    ul(class="row") 
+        each brand in brand_items
+            li(class='col-4')
+                a(href=brand.url) #{brand.name}
+        
+        else
+            li There are no items in #{title.name} brand
+    hr
+    p
+        a(href=title.url+'/delete') Delete brand
+    p
+        a(href=title.url+'/update') Update brand

@@ -1,0 +1,12 @@
+extends layout
+
+block content
+    h1= title
+    
+    ul
+        each item in list_item
+            li
+                a(href=item.url) #{item.name} 
+                | - #[strong In Stock:] #{item.stockQuantity}
+        else
+            li There are no Items

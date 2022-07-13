@@ -1,0 +1,15 @@
+extends layout
+
+block content
+    h1= title
+    hr
+    h3= item.name
+    if error 
+        p This item does not exist
+    else
+        p Are you sure you want to delete this item?
+        form(action="" method="POST")
+            div.form-group
+                input#itemid.form-control(type='hidden',name='itemid', required='true', value=item._id )
+
+            button.btn.btn-primary(type='submit') Delete Item
