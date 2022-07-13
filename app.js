@@ -13,7 +13,8 @@ var catalogRouter = require('./routes/catalog');
 
 var app = express();
 var mongoose = require('mongoose')
-var mongoDB = 'mongodb+srv://Adi:gshzhk92@cluster0.3dy4q.mongodb.net/tennis?retryWrites=true&w=majority'
+var dev_db_url = 'mongodb+srv://Adi:gshzhk92@cluster0.3dy4q.mongodb.net/tennis?retryWrites=true&w=majority'
+var mongoDB = process.env.MONGODB_URI || dev_db_url;
 mongoose.connect(mongoDB, { useNewUrlParser: true , useUnifiedTopology: true});
 var db = mongoose.connection;
 db.on('error', console.error.bind(console, 'MongoDB connection error:'));
